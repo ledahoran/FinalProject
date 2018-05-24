@@ -3,17 +3,18 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `music_library`.
+ * Handles the creation of table `genres`.
  */
-class m180523_015904_create_music_library_table extends Migration
+class m180523_061529_create_genres_table extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('music_library', [
+        $this->createTable('genres', [
             'id' => $this->primaryKey(),
+            'description' => $this->string(100)->notNull()
         ]);
     }
 
@@ -22,6 +23,6 @@ class m180523_015904_create_music_library_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('music_library');
+        $this->dropTable('genres');
     }
 }
